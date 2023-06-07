@@ -11,37 +11,68 @@
             <a href="#" class="header-link">admin</a>
             <a href="#" class="header-link">Выйти</a>
           </div>
-        </header>
-          <div class="body-content">
-          <h1>Задачи</h1>
+      </header>
+      <div class="body-content">
+        <h1 class="tasks-heading">Задачи</h1>
+        <button class="add-task">
+          <img src="@/assets/plus.svg" alt="Plus" class="plus-svg" />
+          <span class="add-task-label">ДОБАВИТЬ ЗАДАЧУ</span>
+          </button>
+      </div>
+      <div class="task-block-holder">
+        <div class="task-column">
+          <h3 class="title-column">Открыта</h3>
+        <div class="custom-block">
+          <div class="custom-header"></div>
         </div>
+        </div>
+        <div class="task-column">
+          <h3 class="title-column">В процессе</h3>
+         <div class="custom-block">
+           <div class="custom-header"></div>
+         </div>
+        </div>
+        <div class="task-column">
+          <h3 class="title-column">Приостановлена</h3>
+         <div class="custom-block">
+           <div class="custom-header"></div>
+         </div>
+        </div>
+        <div class="task-column">
+          <h3 class="title-column">На рассмотрении</h3>
+         <div class="custom-block">
+           <div class="custom-header"></div>
+         </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-    };
-  }
 };
 </script>
 
 <style>
-body{
+body {
   margin: 0;
 }
 
-.container-holder{
-  background: #0c0e2e;
+.container-holder {
+  background: #101221;
+  height: 100vh;
 }
-.container{
+
+.container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  height: 100%;
 }
-.header{
+
+.header {
   background: #20234B;
   padding: 20px;
   width: 100%;
@@ -50,24 +81,28 @@ body{
   align-items: center;
   box-sizing: border-box;
 }
-.logo{
+
+.logo {
   display: flex;
   align-items: center;
   margin: 0;
   color: #B3B6C4;
   font-weight: 600;
   font-size: 24px;
-  line-height: 29px;;
+  line-height: 29px;
 }
-.logo-svg{
+
+.logo-svg {
   display: flex;
   margin-right: 20px;
 }
+
 .header-right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
+
 .header-link {
   font-weight: 600;
   font-size: 14px;
@@ -76,14 +111,86 @@ body{
   color: #fff;
   text-decoration: none;
 }
+
 .header-link:last-child {
   margin-right: 0;
 }
+
 .body-content {
+  display: flex;
+  align-items: center;
   background-color: #101221;
   padding: 20px;
   color: #fff;
   width: 100%;
-  height: 100vh;
-  box-sizing: border-box;}
+  box-sizing: border-box;
+}
+.tasks-heading {
+  align-self: flex-start;
+  margin-right: 40px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 5px;
+  margin-left: 20px;
+}
+
+.add-task {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.add-task:hover {
+  text-decoration: underline;
+}
+.task-block-holder {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  height: 35px;
+}
+
+.task-column {
+  flex: 1;
+  background-color:#3E438D;
+  margin-right: 20px;
+  border-radius: 0 0 8px 8px;
+  box-sizing: border-box;
+}
+
+.task-column h3 {
+  margin-top: 0;
+}
+.title-column{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin: 10px;
+}
+.custom-block {
+  background: #20234B;
+  border-radius: 0px 0px 8px 8px;
+  max-width: 100%;
+  height: 200px;
+}
+.custom-block:last-child {
+  margin-right: 0;
+}
+.custom-header{
+  background: #6F73A3;;
+  border-radius: 8px 8px 0px 0px;
+  width: 100%;
+  height: 20px;
+}
+
+
 </style>
