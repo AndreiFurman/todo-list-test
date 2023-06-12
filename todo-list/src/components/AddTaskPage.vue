@@ -14,7 +14,7 @@
       </header>
       <div class="body-content">
         <h1 class="tasks-heading">Задачи</h1>
-        <button class="add-task">
+        <button class="add-task" @click="goToAddTaskPage">
           <img src="@/assets/plus.svg" alt="Plus" class="plus-svg"/>
           <span class="add-task-label">ДОБАВИТЬ ЗАДАЧУ</span>
         </button>
@@ -25,6 +25,7 @@
 
 <script>
 export default {
+  name: 'Add Task Page',
   methods: {
     goToAddTaskPage() {
       this.$router.push('/');

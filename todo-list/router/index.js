@@ -6,8 +6,15 @@ import AddTaskPage from '../src/components/AddTaskPage';
 Vue.use(VueRouter);
 
 const routes = [
-    { path: '/', component: HelloWorld },
-    { path: '/add-task', component: AddTaskPage },
+    {
+        path: '/',
+        component: HelloWorld
+    },
+    {
+        path: '/add-task',
+        component: AddTaskPage,
+    },
+
 ];
 
 const router = new VueRouter({

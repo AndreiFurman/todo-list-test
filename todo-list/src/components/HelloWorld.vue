@@ -14,10 +14,10 @@
       </header>
       <div class="body-content">
         <h1 class="tasks-heading">Задачи</h1>
-        <button class="add-task" @click="goToAddTaskPage">
+        <router-link to="/add-task" class="add-task">
           <img src="@/assets/plus.svg" alt="Plus" class="plus-svg"/>
           <span class="add-task-label">ДОБАВИТЬ ЗАДАЧУ</span>
-        </button>
+        </router-link>
       </div>
       <div class="task-block-holder">
         <div class="task-column">
@@ -79,7 +79,7 @@
 export default {
   methods: {
     goToAddTaskPage() {
-      this.$router.push('/add-task');
+      this.$router.push({path: '/add-task'});
     }
   }
 };
