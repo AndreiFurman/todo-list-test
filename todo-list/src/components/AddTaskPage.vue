@@ -14,74 +14,23 @@
       </header>
       <div class="body-content">
         <h1 class="tasks-heading">Задачи</h1>
-        <button class="add-task" @click="goToAddTaskPage">
+        <button class="add-task">
           <img src="@/assets/plus.svg" alt="Plus" class="plus-svg"/>
           <span class="add-task-label">ДОБАВИТЬ ЗАДАЧУ</span>
         </button>
-      </div>
-      <div class="task-block-holder">
-        <div class="task-column">
-          <h3 class="title-column">Открыта</h3>
-          <div class="custom-block">
-            <div class="custom-header">
-              <div class="card">
-                <h4 class="card-title">Заголовок задачи</h4>
-                <p class="card-description">Описание задачи</p>
-                <div class="user-name">Имя пользователя</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="task-column">
-          <h3 class="title-column">В процессе</h3>
-          <div class="custom-block">
-            <div class="custom-header">
-              <div class="card">
-                <h4 class="card-title">Заголовок задачи</h4>
-                <p class="card-description">Описание задачи</p>
-                <div class="user-name">Имя пользователя</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="task-column">
-          <h3 class="title-column">Приостановлена</h3>
-          <div class="custom-block">
-            <div class="custom-header">
-              <div class="card">
-                <h4 class="card-title">Заголовок задачи</h4>
-                <p class="card-description">Описание задачи</p>
-                <div class="user-name">Имя пользователя</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="task-column">
-          <h3 class="title-column">На рассмотрении</h3>
-          <div class="custom-block">
-            <div class="custom-header">
-              <div class="card">
-                <h4 class="card-title">Заголовок задачи</h4>
-                <p class="card-description">Описание задачи</p>
-                <div class="user-name">Имя пользователя</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
-  </div>
-
 </template>
 
 <script>
-
 export default {
   methods: {
     goToAddTaskPage() {
-      this.$router.push('/add-task');
+      this.$router.push('/');
     }
   }
+
 };
 </script>
 
