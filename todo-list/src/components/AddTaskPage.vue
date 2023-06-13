@@ -12,13 +12,20 @@
           <a href="#" class="header-link">Выйти</a>
         </div>
       </header>
-      <div class="body-content">
+      <div class="body-content-task">
         <h1 class="tasks-heading">Задачи</h1>
-        <button class="add-task" @click="goToAddTaskPage">
-          <img src="@/assets/plus.svg" alt="Plus" class="plus-svg"/>
-          <span class="add-task-label">ДОБАВИТЬ ЗАДАЧУ</span>
-        </button>
         </div>
+      <div class="add-task-holder">
+        <p class="add-task-title">Название</p>
+        <input type="text" class="task-input" placeholder="Введите тему задачи">
+        <span class="state-text">Состояние</span>
+        <select class="state-select">
+          <option value="Открыто">Открыто</option>
+          <option value="На рассмотрении">На рассмотрении</option>
+          <option value="В процессе">В процессе</option>
+          <option value="Приостоновлено">Приостоновлено</option>
+        </select>
+      </div>
       </div>
     </div>
 </template>
@@ -96,8 +103,9 @@ body {
   margin-right: 0;
 }
 
-.body-content {
+.body-content-task {
   display: flex;
+  margin-bottom: 30px;
   align-items: center;
   background-color: #101221;
   padding: 20px;
@@ -116,105 +124,51 @@ body {
   margin-left: 20px;
 }
 
-.add-task {
-  display: flex;
-  align-items: center;
-  align-self: flex-start;
-  background: none;
-  border: none;
-  color: #fff;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
-  cursor: pointer;
-}
-
-.add-task:hover {
-  text-decoration: underline;
-}
-
-.task-block-holder {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  height: 35px;
-}
-
-.task-column {
-  position: relative;
-  flex: 1;
-  background-color: #3E438D;
+.add-task-title{
+  color: #FFFFFF;
   margin-right: 20px;
-  border-radius: 0 0 8px 8px;
-  box-sizing: border-box;
-}
-
-.task-column h3 {
-  margin-top: 0;
-}
-
-.title-column {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  color: #FFFFFF;
-  margin: 10px;
-}
-
-.custom-block {
-  background: #20234B;
-  border-radius: 0px 0px 8px 8px;
-  max-width: 100%;
-  height: 300px;
-}
-
-.custom-block:last-child {
-  margin-right: 0;
-}
-
-.custom-header {
-  position: absolute;
-  background-color: #6F73A3;
-  border-radius: 8px 8px 0px 0px;
-  width: 100%;
-  height: 12px;
-  margin-top: 8px;
-}
-
-.card {
-  position: relative;
-  background: #3E438D;
-  padding: 10px;
-  border-radius: 4px;
-  margin-top: 12px;
-}
-
-.card .user-name {
-  position: absolute;
-  bottom: 4px;
-  right: 2px;
-  background-color: #6F73A3;
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.card-title {
-  color: #FFFFFF;
+  font-weight: 500;
   font-size: 14px;
-  font-weight: bold;
   line-height: 17px;
 }
-
-.card-description {
+.state-text{
+  display: flex;
+  align-items: center;
   color: #FFFFFF;
-  font-weight: 400;
+  margin-right: 20px;
+  font-weight: 500;
   font-size: 14px;
-  padding-bottom: 20px;
+  line-height: 17px;
 }
+.add-task-holder{
+  display: flex;
+}
+.task-input::placeholder {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 20px;
+}
+.task-input {
+  color: #FFFFFF;
+  width: 100%;
+  height: 40px;
+  background: #20234B;
+  border-radius: 100px;
+  margin-right: 20px;
+}
+.state-select{
+  width: 170px;
+  height: 40px;
+  background: #FFFDFD;
+  border-radius: 8px;
+  color: #6D6D6D;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
 
+
+}
 
 </style>
