@@ -7,6 +7,10 @@
           <h1 class="logo">necms.net</h1>
         </div>
         <div class="header-right">
+          <button class="save-button">Сохранить</button>
+          <button class="reload-btn" @click="reloadPage">
+          <img src="@/assets/Vector.svg" alt="Vector" class="vector"/>
+          </button>
           <img src="@/assets/telegram 1.svg" alt="Logo" class="logo-svg"/>
           <a href="#" class="header-link">admin</a>
           <a href="#" class="header-link">Выйти</a>
@@ -26,17 +30,36 @@
           <option value="Приостоновлено">Приостоновлено</option>
         </select>
       </div>
+      <div class="block-description">
+        <p class="title-description">Описание</p>
+        <vue2-tinymce-editor class="description-text" v-model="content" :width="700" :height="250"></vue2-tinymce-editor>
+
+      </div>
       </div>
     </div>
 </template>
 
 <script>
+
+import { Vue2TinymceEditor } from "vue2-tinymce-editor";
+
 export default {
-  name: 'Add Task Page',
+  name: 'AddTaskPage',
+
+  components: {
+    Vue2TinymceEditor,
+  },
+
+  data() {
+    return {
+      content: "",
+    };
+  },
+
   methods: {
-    goToAddTaskPage() {
-      this.$router.push('/');
-    }
+    reloadPage() {
+      window.location.reload();
+    },
   }
 
 };
@@ -142,6 +165,7 @@ body {
 }
 .add-task-holder{
   display: flex;
+  margin-bottom: 20px;
 }
 .task-input::placeholder {
   color: #ffffff;
@@ -150,15 +174,21 @@ body {
   line-height: 17px;
   padding-left: 20px;
 }
+.task-input:focus::placeholder {
+  color: transparent;
+}
 .task-input {
+  padding: 0 20px;
   color: #FFFFFF;
   width: 100%;
   height: 40px;
+  border: none;
   background: #20234B;
   border-radius: 100px;
   margin-right: 20px;
 }
 .state-select{
+  padding: 0 17px;
   width: 170px;
   height: 40px;
   background: #FFFDFD;
@@ -167,8 +197,38 @@ body {
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
-
-
+}
+.save-button {
+  background-color: #FF4B58;;
+  color: #FFFFFF;
+  border-radius: 23.5px;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.reload-btn{
+  margin-right: 100px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.block-description{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 300px;
+  background: #20234B;
+  border-radius: 10px;
+}
+.title-description{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
 }
 
 </style>

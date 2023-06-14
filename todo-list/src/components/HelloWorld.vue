@@ -78,9 +78,7 @@
 
 export default {
   methods: {
-    goToAddTaskPage() {
-      this.$router.push({path: '/add-task'});
-    }
+
   }
 };
 </script>
@@ -173,10 +171,11 @@ body {
   background: none;
   border: none;
   color: #fff;
-  font-weight: 600;
+  font-weight: 600  ;
   font-size: 18px;
   line-height: 22px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .add-task:hover {
